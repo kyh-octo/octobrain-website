@@ -831,6 +831,8 @@ section[id]{scroll-margin-top:80px}
 .copy-btn:hover{border-color:var(--cyan);color:var(--cyan)}
 .info-value{color:var(--text-0)}
 .info-value-soft{color:var(--text-1)}
+.info-link{color:var(--cyan);font-size:15px;word-break:break-all}
+.info-link:hover{text-decoration:underline}
 .info-divider{
   border:0;
   border-top:1px solid var(--line-soft);
