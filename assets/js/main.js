@@ -244,19 +244,53 @@
         return;
       }
 
+      var btn = form.querySelector('button[type="submit"]');
+      var note = form.querySelector('.form-note');
+      var honey = document.getElementById('fHoney');
       var subject = '[외주 문의] ' + name + (company ? ' — ' + company : '');
-      var body = [
-        '이름: ' + name,
-        '회사: ' + (company || '-'),
-        '이메일: ' + email,
-        '',
-        '프로젝트 설명:',
-        desc
-      ].join('\r\n');
+      var prevLabel = btn ? btn.innerHTML : '';
 
-      window.location.href = 'mailto:' + EMAIL +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = '전송 중…';
+      }
+
+      fetch('https://formsubmit.co/ajax/' + EMAIL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          '이름': name,
+          '회사명': company || '-',
+          '이메일': email,
+          '프로젝트 설명': desc,
+          _subject: subject,
+          _replyto: email,
+          _template: 'table',
+          _honey: honey ? honey.value : ''
+        })
+      })
+        .then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            return { ok: res.ok, data: data };
+          });
+        })
+        .then(function (r) {
+          var ok = r.ok && r.data && (r.data.success === 'true' || r.data.success === true);
+          if (!ok) throw new Error((r.data && r.data.message) || 'send failed');
+          form.hidden = true;
+          var done = document.getElementById('formSuccess');
+          if (done) done.hidden = false;
+        })
+        .catch(function () {
+          if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = prevLabel;
+          }
+          if (note) {
+            note.classList.add('form-note-error');
+            note.textContent = '전송에 실패했습니다. 잠시 후 다시 시도하시거나 kyh@octo-brain.com 으로 직접 보내주세요.';
+          }
+        });
     });
   })();
 
