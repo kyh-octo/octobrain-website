@@ -42,10 +42,9 @@
       <a class="nav-link nav-link-game" href="#games">Games</a>
       <a class="nav-link" href="#projects">Projects</a>
       <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#contact">Contact</a>
     </nav>
 
-    <a class="btn-nav" href="#contact">외주 문의</a>
+    <a class="btn-nav" href="#contact">Contact</a>
 
     <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="메뉴 열기">
       <span class="nav-toggle-box" aria-hidden="true">
@@ -67,8 +66,7 @@
     <a class="nav-link nav-link-game" href="#games">Games</a>
     <a class="nav-link" href="#projects">Projects</a>
     <a class="nav-link" href="#about">About</a>
-    <a class="nav-link" href="#contact">Contact</a>
-    <a class="btn-nav btn-nav-lg" href="#contact">외주 문의</a>
+    <a class="btn-nav btn-nav-lg" href="#contact">Contact</a>
   </nav>
 </div>
 
@@ -282,8 +280,8 @@
             <p class="case-media-text">이미지·자료 추가 예정</p>
           </div>
           <div class="case-body">
-            <p class="case-client">HD건설기계</p>
-            <h3 class="case-title">선박용 ESS 시스템 — HD_BADA_100</h3>
+            <p class="case-client">국내 대형 조선·건설기계 기업</p>
+            <h3 class="case-title">선박용 ESS 시스템 개발</h3>
             <!-- TODO: 상세 설명 교체 -->
             <p class="case-desc">선박용 에너지저장장치(ESS) 프로젝트에 참여했습니다. 상세 수행 범위와 결과는 정리 후 공개 예정입니다.</p>
             <ul class="chips">
@@ -305,7 +303,7 @@
             <p class="case-media-text">이미지·자료 추가 예정</p>
           </div>
           <div class="case-body">
-            <p class="case-client">이솔루션</p>
+            <p class="case-client">배터리 BMS 솔루션 전문기업</p>
             <h3 class="case-title">BMS 펌웨어 &amp; 진단 툴 개발</h3>
             <!-- TODO: 상세 설명 교체 -->
             <p class="case-desc">BMS 펌웨어와 Windows 기반 진단·모니터링 툴을 개발했습니다. 상세 수행 범위와 결과는 정리 후 공개 예정입니다.</p>
@@ -397,6 +395,7 @@
 
         <div class="card contact-form reveal">
           <form id="inquiryForm" novalidate>
+            <input type="text" name="_honey" id="fHoney" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-row">
               <div class="field">
                 <label for="fName">이름 <span class="req" aria-hidden="true">*</span></label>
@@ -415,9 +414,13 @@
               <label for="fDesc">프로젝트 설명 <span class="req" aria-hidden="true">*</span></label>
               <textarea id="fDesc" name="desc" rows="6" placeholder="프로젝트 개요, 희망 일정, 예산 범위 등을 자유롭게 적어주세요." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">문의 메일 보내기 <span class="arr" aria-hidden="true">→</span></button>
-            <p class="form-note">버튼을 누르면 사용 중인 메일 앱이 열립니다. 동작하지 않으면 kyh@octo-brain.com 으로 직접 보내주세요.</p>
+            <button type="submit" class="btn btn-primary btn-block">문의 보내기 <span class="arr" aria-hidden="true">→</span></button>
+            <p class="form-note">보내기를 누르면 문의가 kyh@octo-brain.com 으로 바로 접수됩니다.</p>
           </form>
+          <div class="form-success" id="formSuccess" hidden>
+            <p class="form-success-title">문의가 전송되었습니다 ✓</p>
+            <p class="form-success-copy">영업일 기준 1–2일 내에 회신드리겠습니다.<br>급한 건은 kyh@octo-brain.com 으로 직접 연락 주세요.</p>
+          </div>
         </div>
       </div>
     </div>
