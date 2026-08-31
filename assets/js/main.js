@@ -60,7 +60,7 @@
 
   /* ===== 3. SCROLL SPY ===== */
   (function scrollSpy() {
-    var ids = ['services', 'games', 'projects', 'about', 'contact'];
+    var ids = ['services', 'games', 'projects', 'downloads', 'about', 'contact'];
     var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
     if (!links.length || !supportsIO) return;
 
