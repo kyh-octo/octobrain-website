@@ -1,0 +1,60 @@
+/* Each business has its own content and navigation; the home page selects a business. */
+.division-brand{display:flex;align-items:center;gap:14px;margin-right:auto;min-width:0}
+.division-brand .brand{margin-right:0}
+.division-label{border-left:1px solid var(--line);padding-left:14px;font-size:13px;font-weight:600;color:var(--cyan);white-space:nowrap}
+.business-switch{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-size:13px;color:var(--text-1);white-space:nowrap}
+.business-switch:hover,.footer-switch:hover{color:var(--cyan)}
+.division-header .header-inner{gap:20px}
+.mobile-business-switch{text-align:center;margin-top:12px;padding:12px;border-top:1px solid var(--line);font-size:14px;color:var(--text-1)}
+.footer-division{font-family:var(--font-display);font-weight:600;color:var(--text-0);font-size:22px;margin-bottom:14px}
+.footer-division span{font-family:var(--font-body);font-size:14px;color:var(--cyan);padding-left:8px}
+.footer-switch{display:inline-flex;align-items:center;min-height:44px;margin-top:14px;font-size:13px;color:var(--text-1)}
+.division-actions{display:flex;flex-wrap:wrap;gap:12px}
+.division-intro{font-size:17px;line-height:1.9;margin:24px 0 30px}
+.engineering-hero{padding:150px 0 76px;background:radial-gradient(ellipse at 90% 35%,rgba(20,194,194,.1),transparent 55%);border-bottom:1px solid var(--line)}
+.engineering-hero h1{font-size:clamp(36px,4.5vw,58px);line-height:1.25;letter-spacing:-.04em;margin-top:22px}
+.engineering-hero h1 span{color:var(--cyan)}
+.engineering-points{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:42px;padding-top:25px;border-top:1px solid var(--line);font-size:13px}
+.engineering-points li::before{content:"+";color:var(--teal);padding-right:10px}
+.engineering-page .about{background:var(--bg-0)}
+.engineering-page #contact{background:var(--bg-1)}
+.software-status{font-size:12px;margin-top:22px;color:var(--text-1)}
+.store-page .downloads{padding-block:68px;background:var(--bg-0)}
+.store-page .store-catalog{border-top:1px solid var(--line);background:var(--bg-1)}
+.store-page .store-licenses{background:var(--bg-0)}
+main [id]{scroll-margin-top:84px}
+.division-contact{padding:50px 0;background:var(--bg-0);border-top:1px solid var(--line)}
+.division-contact>.container{display:flex;justify-content:space-between;align-items:center;gap:28px}
+.division-contact h2{font-size:25px;margin:12px 0}
+.division-contact p:not(.eyebrow){font-size:14px}
+.division-contact .btn{flex-shrink:0}
+.games-page .division-label,.games-page .footer-division span,.games-page .nav-link.active,.games-page .footer-switch:hover{color:var(--yellow)}
+.games-page .btn-nav{color:var(--yellow);border-color:rgba(242,245,63,.35)}
+.games-page .mobile-nav .nav-link.active{color:var(--yellow);background:var(--yellow-soft)}
+.portal-header-label{font:10px var(--font-mono);letter-spacing:.12em;color:var(--text-1)}
+.portal-intro{text-align:center;padding:125px 0 45px;background:radial-gradient(ellipse at 50% 0,rgba(20,194,194,.07),transparent 70%)}
+.portal-intro h1{font-size:clamp(34px,4.2vw,52px);line-height:1.3;letter-spacing:-.04em;margin:18px 0}
+.portal-intro> .container>p:last-child{font-size:16px;line-height:1.9}
+.portal-intro .eyebrow{font-size:11px}
+.portal-areas{padding-bottom:76px}
+.portal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.portal-card{--area-accent:var(--cyan);display:flex;flex-direction:column;padding:30px 27px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(155deg,#122431,#0c1421 75%);min-width:0;position:relative;transition:border-color .2s,transform .2s,box-shadow .2s}
+.portal-card-2{background:linear-gradient(155deg,#123030,#0c1421 75%);--area-accent:#77DFDB}
+.portal-card-3{--area-accent:var(--yellow);background:linear-gradient(155deg,#25291d,#111722 75%);border-color:rgba(242,245,63,.19)}
+.portal-card:hover{border-color:var(--area-accent);transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.2)}
+.portal-card:focus-visible{outline:2px solid var(--area-accent);outline-offset:5px}
+.portal-card-top{color:var(--area-accent)}
+.portal-card-top>span{font:10px var(--font-mono);letter-spacing:.08em}
+.portal-card-top svg{margin:30px 0 26px}
+.portal-card h2{font-size:25px;letter-spacing:-.04em;margin-bottom:16px}
+.portal-card-desc{font-size:14px;line-height:1.9;flex:1}
+.portal-card-meta{font-size:11px;color:var(--text-1);margin-top:22px;line-height:1.8}
+.portal-card-action{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line);color:var(--area-accent);font-size:14px;font-weight:600}
+.portal-card-action>span{font-size:22px}
+.portal-footer{padding:32px 0}
+.portal-footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:14px}
+.portal-footer-top a{color:var(--cyan);min-height:44px;display:inline-flex;align-items:center}
+.portal-footer .footer-bottom{margin-top:20px;padding-top:20px}
+@media(max-width:1000px){.division-header .header-inner{gap:16px}.division-label{padding-left:10px}.portal-grid{gap:16px}.portal-card{padding:26px 22px}.portal-card h2{font-size:22px}}
+@media(max-width:768px){.portal-grid{grid-template-columns:1fr;max-width:580px}.portal-intro{padding:106px 0 32px}.portal-card-top{display:flex;align-items:center;justify-content:space-between}.portal-card-top svg{margin:0 0 12px;width:48px;height:48px}.portal-card h2{font-size:25px}.portal-card-desc br{display:none}.portal-areas{padding-bottom:42px}.portal-footer-top{flex-direction:column;align-items:flex-start;gap:8px}.engineering-hero{padding:110px 0 50px}.division-intro{font-size:15px}.engineering-points{margin-top:32px;gap:12px;flex-direction:column}.division-contact>.container{flex-direction:column;align-items:flex-start}.division-brand .brand-name{display:none}.store-page .downloads{padding-block:46px}}
+@media(max-width:480px){.division-actions{flex-direction:column;align-items:stretch}.division-actions .btn{justify-content:center}.division-label{font-size:12px}.division-brand{gap:8px}.division-header .header-inner{gap:12px}.business-switch{font-size:12px}.portal-header-label{font-size:8px;letter-spacing:.05em}.portal-intro> .container>p:last-child{font-size:14px}.portal-intro .eyebrow{font-size:9px}.division-intro br{display:none}}

@@ -8,16 +8,24 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var supportsIO = 'IntersectionObserver' in window;
 
-  // Preserve links saved before Games became a separate page.
-  function redirectLegacyGames() {
-    if (document.body.dataset.page === 'home' && window.location.hash === '#games') {
-      window.location.replace('games.html' + window.location.search);
-      return true;
-    }
-    return false;
+  // Preserve bookmarks from the former single-page site.
+  function redirectLegacySection() {
+    if (document.body.dataset.page !== 'home') return false;
+    var destinations = {
+      '#services': ['engineering.html', '#services'],
+      '#projects': ['engineering.html', '#projects'],
+      '#about': ['engineering.html', '#about'],
+      '#contact': ['engineering.html', '#contact'],
+      '#downloads': ['store.html', '#downloads'],
+      '#games': ['games.html', '']
+    };
+    var destination = destinations[window.location.hash];
+    if (!destination) return false;
+    window.location.replace(destination[0] + window.location.search + destination[1]);
+    return true;
   }
-  if (redirectLegacyGames()) return;
-  window.addEventListener('hashchange', redirectLegacyGames);
+  if (redirectLegacySection()) return;
+  window.addEventListener('hashchange', redirectLegacySection);
 
   /* ===== 1. HEADER SCROLL STATE ===== */
   (function header() {
@@ -106,7 +114,12 @@
 
   /* ===== 3. SCROLL SPY ===== */
   (function scrollSpy() {
-    var ids = ['services', 'projects', 'downloads', 'about', 'contact'];
+    var pageSections = {
+      engineering: ['services', 'projects', 'about', 'contact'],
+      store: ['downloads', 'programs', 'licenses', 'support'],
+      games: ['game-project', 'updates', 'contact']
+    };
+    var ids = pageSections[document.body.dataset.page] || [];
     var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link[href^="#"], .btn-nav[href^="#"]'));
     var sections = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
     if (!links.length || !sections.length) return;
@@ -316,7 +329,7 @@
       var btn = form.querySelector('button[type="submit"]');
       var note = form.querySelector('.form-note');
       var honey = document.getElementById('fHoney');
-      var subject = '[옥토브레인 문의] ' + name + (company ? ' — ' + company : '');
+      var subject = '[' + (form.dataset.subject || '옥토브레인 문의') + '] ' + name + (company ? ' — ' + company : '');
       var prevLabel = btn ? btn.innerHTML : '';
       var controller = new AbortController();
       var timeout = window.setTimeout(function () { controller.abort(); }, 25000);
