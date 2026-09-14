@@ -1,0 +1,68 @@
+/* Program store: shares the site tokens, navigation and footer. */
+.store-page .site-header{background:rgba(7,11,20,.92);border-bottom-color:var(--line-soft)}
+.store-back{display:inline-block;font-size:13px;margin-bottom:35px;color:var(--text-1)}
+.store-back:hover{color:var(--cyan)}
+.store-hero{padding:112px 0 70px;background:radial-gradient(ellipse at 78% 44%,rgba(20,194,194,.09),transparent 52%);border-bottom:1px solid var(--line)}
+.store-hero-grid{display:grid;grid-template-columns:1.4fr 1fr;align-items:center;gap:38px}
+.store-hero h1{font-size:clamp(36px,4.5vw,56px);line-height:1.23;letter-spacing:-.045em;margin-top:20px}
+.store-hero h1 span{color:var(--cyan)}
+.store-intro{margin:24px 0 30px;font-size:16px;line-height:1.9}
+.store-art{position:relative;display:grid;place-items:center;min-height:330px;isolation:isolate}
+.store-orbit{position:absolute;width:310px;height:310px;border:1px solid var(--line);border-radius:50%;z-index:-1}
+.store-orbit::after{content:"";position:absolute;inset:27px;border:1px dashed var(--line);border-radius:50%}
+.store-package{width:248px;height:280px;border:1px solid rgba(46,230,224,.35);border-radius:12px;background:linear-gradient(140deg,#18303b,#0b1724 60%);box-shadow:16px 16px 0 -1px #0b1724,16px 16px 0 0 rgba(46,230,224,.18),0 25px 75px rgba(0,0,0,.3);transform:rotate(-7deg);display:flex;flex-direction:column;justify-content:space-between;padding:23px}
+.package-top,.package-bottom{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:9px;letter-spacing:.07em;color:#a1bec7}
+.package-top{padding-bottom:13px;border-bottom:1px solid var(--line)}
+.store-package img{align-self:center;width:65px;height:auto}
+.package-bottom>span:last-child{font-size:25px;color:var(--cyan)}
+.art-label{position:absolute;bottom:-10px;font:10px var(--font-mono);letter-spacing:.2em;color:var(--text-1)}
+.store-catalog{padding:65px 0 52px}
+.store-section-head{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:26px}
+.store-section-head h2{font-size:28px;margin-top:10px;letter-spacing:-.03em}
+.store-status{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;border:1px solid var(--line);border-radius:30px;padding:6px 13px;font-size:12px;color:#9fd3d5;background:rgba(20,194,194,.04)}
+.store-status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.store-empty{display:flex;align-items:center;gap:30px;padding:46px;border:1px dashed rgba(56,189,197,.3);border-radius:14px;background:rgba(14,22,38,.6)}
+.empty-symbol{flex:none;display:grid;place-items:center;width:88px;height:88px;background:rgba(20,194,194,.06);border:1px solid var(--line);border-radius:20px;color:var(--teal)}
+.empty-kicker{font:11px var(--font-mono);letter-spacing:.14em;color:var(--teal);margin-bottom:12px}
+.store-empty h3{font-size:22px;margin-bottom:12px;letter-spacing:-.02em}
+.store-empty p:last-child{font-size:14px;line-height:1.9}
+.store-existing{font-size:13px;margin-top:20px;display:flex;flex-wrap:wrap;gap:5px 12px}
+.store-existing a,.store-help a{color:var(--cyan)}
+.store-existing a:hover,.store-help a:hover{text-decoration:underline;text-underline-offset:4px}
+.store-licenses{padding:48px 0 64px;background:var(--bg-1);border-block:1px solid var(--line-soft)}
+.license-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.license-card{padding:28px 30px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2)}
+.license-label{font:11px var(--font-mono);letter-spacing:.1em;color:var(--teal);margin-bottom:14px}
+.license-card h3{font-size:22px;margin-bottom:14px}
+.license-card>p:not(.license-label){font-size:14px;line-height:1.85}
+.license-note{display:block;border-top:1px solid var(--line);margin-top:24px;padding-top:16px;font-size:12px;color:#a2b5c3}
+.license-disclaimer{font-size:12px;margin-top:18px;line-height:1.8}
+.store-help{margin-top:46px;padding-top:30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:24px}
+.store-help h3{font-size:18px;margin-bottom:7px}
+.store-help p,.store-help a{font-size:14px}
+.store-help a{overflow-wrap:anywhere}
+@media(max-width:768px){
+  .store-hero{padding:95px 0 48px}
+  .store-hero-grid{grid-template-columns:1fr;gap:35px}
+  .store-back{margin-bottom:26px}
+  .store-art{min-height:260px}
+  .store-package{width:190px;height:215px;padding:18px}
+  .store-package img{width:50px}
+  .package-top,.package-bottom{font-size:7px}
+  .store-orbit{width:245px;height:245px}
+  .art-label{bottom:-5px;font-size:9px}
+  .store-catalog{padding:45px 0 35px}
+  .store-empty{padding:28px;gap:22px;align-items:flex-start}
+  .license-grid{grid-template-columns:1fr}
+  .store-help{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .store-intro{font-size:14px}
+  .store-intro br{display:none}
+  .store-empty{flex-direction:column}
+  .empty-symbol{width:64px;height:64px;border-radius:14px}
+  .empty-symbol svg{width:36px}
+  .store-empty h3{font-size:20px}
+  .store-section-head h2{font-size:25px}
+  .license-card{padding:25px}
+}

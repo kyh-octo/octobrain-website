@@ -61,7 +61,7 @@
   /* ===== 3. SCROLL SPY ===== */
   (function scrollSpy() {
     var ids = ['services', 'games', 'projects', 'downloads', 'about', 'contact'];
-    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link[href^="#"]'));
     if (!links.length || !supportsIO) return;
 
     function setActive(id) {
