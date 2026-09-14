@@ -8,6 +8,17 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var supportsIO = 'IntersectionObserver' in window;
 
+  // Preserve links saved before Games became a separate page.
+  function redirectLegacyGames() {
+    if (document.body.dataset.page === 'home' && window.location.hash === '#games') {
+      window.location.replace('games.html' + window.location.search);
+      return true;
+    }
+    return false;
+  }
+  if (redirectLegacyGames()) return;
+  window.addEventListener('hashchange', redirectLegacyGames);
+
   /* ===== 1. HEADER SCROLL STATE ===== */
   (function header() {
     var el = document.getElementById('siteHeader');
@@ -26,16 +37,27 @@
     var menu = document.getElementById('mobileMenu');
     var close = document.getElementById('menuClose');
     if (!toggle || !menu) return;
+    var background = Array.prototype.slice.call(document.querySelectorAll('.site-header, main, .site-footer, .skip-link'));
+    var desktop = window.matchMedia('(min-width:1001px)');
+    var opened = false;
+    var previousOverflow = '';
 
-    function setOpen(open) {
+    function setOpen(open, restoreFocus) {
+      if (opened === open) return;
+      opened = open;
+      if (open) previousOverflow = document.body.style.overflow;
+      menu.hidden = !open;
+      menu.inert = !open;
       menu.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
-      document.body.style.overflow = open ? 'hidden' : '';
+      background.forEach(function (el) { el.inert = open; });
+      document.body.style.overflow = open ? 'hidden' : previousOverflow;
       if (open && close) {
         close.focus({ preventScroll: true });
-      } else if (!open) {
-        toggle.focus({ preventScroll: true });
+      } else if (restoreFocus !== false) {
+        var target = desktop.matches ? document.querySelector('.brand') : toggle;
+        if (target) target.focus({ preventScroll: true });
       }
     }
 
@@ -50,36 +72,70 @@
     }
 
     menu.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setOpen(false);
+      var link = e.target.closest('a');
+      if (link) {
+        setOpen(false);
+        var href = link.getAttribute('href');
+        if (href && href.charAt(0) === '#') {
+          var destination = document.getElementById(href.slice(1));
+          if (destination) destination.focus({ preventScroll: true });
+        }
+      } else if (e.target === menu) {
+        setOpen(false);
+      }
     });
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && menu.classList.contains('open')) setOpen(false);
+      if (!opened) return;
+      if (e.key === 'Escape') { e.preventDefault(); setOpen(false); }
+      if (e.key === 'Tab') {
+        var focusable = menu.querySelectorAll('a[href], button:not([disabled])');
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+    });
+    desktop.addEventListener('change', function () {
+      if (desktop.matches && opened) setOpen(false);
     });
   })();
 
   /* ===== 3. SCROLL SPY ===== */
   (function scrollSpy() {
-    var ids = ['services', 'games', 'projects', 'downloads', 'about', 'contact'];
-    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link[href^="#"]'));
-    if (!links.length || !supportsIO) return;
+    var ids = ['services', 'projects', 'downloads', 'about', 'contact'];
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link[href^="#"], .btn-nav[href^="#"]'));
+    var sections = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    if (!links.length || !sections.length) return;
 
     function setActive(id) {
       links.forEach(function (a) {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        var active = a.getAttribute('href') === '#' + id;
+        a.classList.toggle('active', active);
+        if (active) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
       });
     }
 
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) setActive(entry.target.id);
+    var scheduled = false;
+    function sync() {
+      scheduled = false;
+      var active = '';
+      sections.forEach(function (section) {
+        if (section.getBoundingClientRect().top <= window.innerHeight * 0.4) active = section.id;
       });
-    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-
-    ids.forEach(function (id) {
-      var section = document.getElementById(id);
-      if (section) io.observe(section);
-    });
+      setActive(active);
+    }
+    function schedule() {
+      if (!scheduled) { scheduled = true; window.requestAnimationFrame(sync); }
+    }
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    window.addEventListener('load', schedule);
+    sync();
   })();
 
   /* ===== 4. REVEAL ON SCROLL ===== */
@@ -92,6 +148,8 @@
       els.forEach(function (el) { el.classList.add('in'); });
       return;
     }
+
+    document.documentElement.classList.add('js');
 
     els.forEach(function (el) {
       var siblings = Array.prototype.filter.call(el.parentElement.children, function (child) {
@@ -200,15 +258,22 @@
     if (!form) return;
 
     var EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    var submitting = false;
+
+    function clearInputError(input) {
+      if (!input || !input.id) return;
+      input.removeAttribute('aria-invalid');
+      input.removeAttribute('aria-describedby');
+      var field = input.closest('.field');
+      if (field) field.classList.remove('field-error');
+      var message = document.getElementById(input.id + '-error');
+      if (message) message.remove();
+    }
 
     function clearErrors() {
-      form.querySelectorAll('.field-error').forEach(function (field) {
-        field.classList.remove('field-error');
-      });
-      form.querySelectorAll('.field-msg').forEach(function (msg) {
-        msg.parentNode.removeChild(msg);
-      });
+      form.querySelectorAll('[aria-invalid]').forEach(clearInputError);
     }
+    form.addEventListener('input', function (e) { clearInputError(e.target); });
 
     function fail(input, message) {
       var field = input.closest('.field');
@@ -216,12 +281,16 @@
       field.classList.add('field-error');
       var msg = document.createElement('p');
       msg.className = 'field-msg';
+      msg.id = input.id + '-error';
       msg.textContent = message;
+      input.setAttribute('aria-invalid', 'true');
+      input.setAttribute('aria-describedby', msg.id);
       field.appendChild(msg);
     }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (submitting) return;
       clearErrors();
 
       var nameEl = document.getElementById('fName');
@@ -237,7 +306,7 @@
       var invalid = [];
       if (!name) { fail(nameEl, '이름을 입력해주세요.'); invalid.push(nameEl); }
       if (!EMAIL_RE.test(email)) { fail(emailEl, '올바른 이메일 주소를 입력해주세요.'); invalid.push(emailEl); }
-      if (!desc) { fail(descEl, '프로젝트 설명을 입력해주세요.'); invalid.push(descEl); }
+      if (!desc) { fail(descEl, '문의 내용을 입력해주세요.'); invalid.push(descEl); }
 
       if (invalid.length) {
         invalid[0].focus();
@@ -247,8 +316,16 @@
       var btn = form.querySelector('button[type="submit"]');
       var note = form.querySelector('.form-note');
       var honey = document.getElementById('fHoney');
-      var subject = '[외주 문의] ' + name + (company ? ' — ' + company : '');
+      var subject = '[옥토브레인 문의] ' + name + (company ? ' — ' + company : '');
       var prevLabel = btn ? btn.innerHTML : '';
+      var controller = new AbortController();
+      var timeout = window.setTimeout(function () { controller.abort(); }, 25000);
+      submitting = true;
+      form.setAttribute('aria-busy', 'true');
+      if (note) {
+        note.classList.remove('form-note-error');
+        note.textContent = '문의를 전송하고 있습니다…';
+      }
 
       if (btn) {
         btn.disabled = true;
@@ -257,12 +334,13 @@
 
       fetch('https://formsubmit.co/ajax/' + EMAIL, {
         method: 'POST',
+        signal: controller.signal,
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           '이름': name,
           '회사명': company || '-',
           '이메일': email,
-          '프로젝트 설명': desc,
+          '문의 내용': desc,
           _subject: subject,
           _replyto: email,
           _template: 'table',
@@ -279,17 +357,27 @@
           if (!ok) throw new Error((r.data && r.data.message) || 'send failed');
           form.hidden = true;
           var done = document.getElementById('formSuccess');
-          if (done) done.hidden = false;
+          if (done) {
+            done.hidden = false;
+            done.focus();
+          }
         })
-        .catch(function () {
+        .catch(function (error) {
           if (btn) {
             btn.disabled = false;
             btn.innerHTML = prevLabel;
           }
           if (note) {
             note.classList.add('form-note-error');
-            note.textContent = '전송에 실패했습니다. 잠시 후 다시 시도하시거나 kyh@octo-brain.com 으로 직접 보내주세요.';
+            note.textContent = error.name === 'AbortError'
+              ? '응답이 지연되고 있습니다. 입력 내용은 보존되어 있으니 다시 시도하시거나 kyh@octo-brain.com 으로 직접 보내주세요.'
+              : '전송에 실패했습니다. 입력 내용은 보존되어 있으니 다시 시도하시거나 kyh@octo-brain.com 으로 직접 보내주세요.';
           }
+        })
+        .finally(function () {
+          window.clearTimeout(timeout);
+          submitting = false;
+          form.removeAttribute('aria-busy');
         });
     });
   })();

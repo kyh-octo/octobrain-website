@@ -1,0 +1,29 @@
+/* Indie games retain the studio's yellow accent. */
+.games-hero{padding:112px 0 66px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 40%,rgba(242,245,63,.08),transparent 50%);border-bottom:1px solid rgba(242,245,63,.13)}
+.games-hero .container{position:relative}
+.page-back{font-size:13px;display:inline-flex;align-items:center;min-height:44px;margin-bottom:24px}
+.page-back:hover{color:var(--yellow)}
+.games-hero h1{font-size:clamp(36px,4.7vw,60px);letter-spacing:-.04em;line-height:1.25;margin:22px 0}
+.games-hero h1 span{color:var(--yellow)}
+.games-intro{font-size:16px;line-height:1.9;margin-bottom:28px;max-width:35em}
+.games-hero-decor{position:absolute;right:40px;top:90px;font-family:var(--font-display);font-weight:700;font-size:60px;line-height:1.08;letter-spacing:.03em;color:rgba(242,245,63,.12);transform:rotate(-7deg);border:1px solid rgba(242,245,63,.15);padding:30px;user-select:none}
+.games-hero-decor>span{position:absolute;right:-15px;bottom:-30px;font-size:75px;color:var(--yellow)}
+.games-project{padding:60px 0 70px;background:var(--bg-1)}
+.games-project-label{margin-bottom:24px;color:var(--yellow)}
+.games-project .game-card{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0}
+.games-project .game-media{min-width:0;min-height:310px;aspect-ratio:auto}
+.games-project .game-body{min-width:0}
+.games-project .game-status{font-family:var(--font-body);font-size:12px;line-height:1.5}
+.games-project .game-media-text{color:#B7BA8A;font-family:var(--font-body);font-size:13px;line-height:1.8}
+.game-release-note{width:100%;font-size:13px;color:#C3C79B;padding:10px 0}
+.games-project .game-title{font-size:25px}
+.games-project .game-title-sub{display:block;margin-top:8px;font-size:15px}
+.games-updates{margin-top:32px;border-top:1px solid var(--line);padding-top:28px}
+.games-updates h2{font-size:20px;margin-bottom:10px}
+.games-updates p{font-size:14px}
+.games-updates a{display:inline-flex;align-items:center;min-height:44px;color:var(--yellow);font-size:14px;margin-top:12px}
+.games-updates a:hover{text-decoration:underline;text-underline-offset:4px}
+.games-page .footer-links a[aria-current="page"]{color:var(--yellow)}
+@media(max-width:900px){.games-hero-decor{right:30px;font-size:44px;top:110px}.games-intro{max-width:28em}}
+@media(max-width:900px){.games-project .game-card{grid-template-columns:1fr}.games-project .game-media{aspect-ratio:16/9;min-height:0}}
+@media(max-width:768px){.games-hero{padding:90px 0 45px}.games-hero-decor{display:none}.games-intro{font-size:14px}.games-project{padding:40px 0 48px}.games-project .game-media{min-height:210px}.games-hero h1{margin-top:18px}.games-project .game-title{font-size:23px}}
