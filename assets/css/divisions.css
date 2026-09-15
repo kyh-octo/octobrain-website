@@ -18,6 +18,17 @@
 .engineering-points li::before{content:"+";color:var(--teal);padding-right:10px}
 .engineering-page .about{background:var(--bg-0)}
 .engineering-page #contact{background:var(--bg-1)}
+.engineering-partnership{background:radial-gradient(ellipse at 85% 50%,rgba(20,194,194,.06),transparent 65%);border-bottom:1px solid var(--line)}
+.partnership-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:44px;align-items:stretch;margin-top:32px}
+.partnership-details{display:grid;gap:22px}
+.partnership-details dt{font-size:18px;font-weight:600;color:var(--text-0);margin-bottom:6px}
+.partnership-details dd{font-size:15px;line-height:1.8}
+.partnership-note{font-size:13px;margin:24px 0;color:var(--text-1)}
+.partnership-status{padding:32px;border:1px solid var(--line);border-radius:14px;background:var(--bg-2);display:flex;flex-direction:column;justify-content:center}
+.partnership-count{font-family:var(--font-display);font-size:76px;font-weight:600;line-height:1.1;color:var(--cyan);margin:20px 0}
+.partnership-count span{font-family:var(--font-body);font-size:19px;font-weight:500;margin-left:12px;color:var(--text-0)}
+.partnership-status-copy{font-size:14px;line-height:1.8}
+@media(max-width:768px){.partnership-grid{grid-template-columns:1fr;gap:28px}.partnership-status{padding:26px}.partnership-count{font-size:64px}}
 .software-status{font-size:12px;margin-top:22px;color:var(--text-1)}
 .store-page .downloads{padding-block:68px;background:var(--bg-0)}
 .store-page .store-catalog{border-top:1px solid var(--line);background:var(--bg-1)}

@@ -115,7 +115,7 @@
   /* ===== 3. SCROLL SPY ===== */
   (function scrollSpy() {
     var pageSections = {
-      engineering: ['services', 'projects', 'about', 'contact'],
+      engineering: ['services', 'projects', 'partnership', 'about', 'contact'],
       store: ['downloads', 'programs', 'licenses', 'support'],
       games: ['game-project', 'updates', 'contact']
     };
