@@ -32,6 +32,7 @@
     padding:24px;
     word-break:keep-all;
   }
+  html:not([lang="ko"]) body{word-break:normal}
   img{height:96px;width:auto;margin-inline:auto;filter:drop-shadow(0 0 20px rgba(46,230,224,.3))}
   .code{
     margin-top:28px;
@@ -64,14 +65,15 @@
   a:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
 </style>
 </head>
-<body>
+<body data-page="404">
 <main>
   <img src="/assets/img/logo-mark.svg" alt="OctoBrain">
   <div class="code">404</div>
-  <h1>페이지를 찾을 수 없습니다</h1>
-  <p>NOT FOUND — 주소가 바뀌었거나 존재하지 않는 페이지입니다.</p>
-  <a class="btn" href="/">홈으로 돌아가기</a>
-  <nav class="quick-links" aria-label="사업별 페이지"><a href="/engineering.html">외주개발</a><a href="/store.html">프로그램 판매·배포</a><a href="/games.html">인디게임</a></nav>
+  <h1 data-i18n="nf.title">페이지를 찾을 수 없습니다</h1>
+  <p data-i18n="nf.body">NOT FOUND — 주소가 바뀌었거나 존재하지 않는 페이지입니다.</p>
+  <a class="btn" href="/" data-i18n="nf.home">홈으로 돌아가기</a>
+  <nav class="quick-links" aria-label="사업별 페이지" data-i18n-attr="aria-label:nf.quickLabel"><a href="/engineering.html" data-i18n="nf.eng">외주개발</a><a href="/store.html" data-i18n="nf.store">프로그램 판매·배포</a><a href="/games.html" data-i18n="nf.games">인디게임</a></nav>
 </main>
+<script src="/assets/js/i18n.js?v=20260925-i18n"></script>
 </body>
 </html>

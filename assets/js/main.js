@@ -5,6 +5,13 @@
   'use strict';
 
   var EMAIL = 'kyh@octo-brain.com';
+
+  // i18n.js(OBI18N)가 있으면 현재 언어의 문자열, 없으면 한국어 기본값을 돌려준다.
+  function T(key, fallback) {
+    var i18n = window.OBI18N;
+    var v = i18n && typeof i18n.t === 'function' ? i18n.t(key) : null;
+    return v || fallback;
+  }
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var supportsIO = 'IntersectionObserver' in window;
 
@@ -58,7 +65,7 @@
       menu.inert = !open;
       menu.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+      toggle.setAttribute('aria-label', open ? T('js.menuClose', '메뉴 닫기') : T('js.menuOpen', '메뉴 열기'));
       background.forEach(function (el) { el.inert = open; });
       document.body.style.overflow = open ? 'hidden' : previousOverflow;
       if (open && close) {
@@ -233,8 +240,14 @@
     var original = btn.textContent;
     var timer = null;
 
+    // 언어가 바뀌면 버튼 원문(복사/Copy/コピー)을 다시 읽는다
+    document.addEventListener('ob:langchange', function () {
+      window.clearTimeout(timer);
+      original = btn.textContent;
+    });
+
     function done() {
-      btn.textContent = '복사됨 ✓';
+      btn.textContent = T('js.copied', '복사됨 ✓');
       window.clearTimeout(timer);
       timer = window.setTimeout(function () { btn.textContent = original; }, 1800);
     }
@@ -317,9 +330,9 @@
       var desc = descEl.value.trim();
 
       var invalid = [];
-      if (!name) { fail(nameEl, '이름을 입력해주세요.'); invalid.push(nameEl); }
-      if (!EMAIL_RE.test(email)) { fail(emailEl, '올바른 이메일 주소를 입력해주세요.'); invalid.push(emailEl); }
-      if (!desc) { fail(descEl, '문의 내용을 입력해주세요.'); invalid.push(descEl); }
+      if (!name) { fail(nameEl, T('js.errName', '이름을 입력해주세요.')); invalid.push(nameEl); }
+      if (!EMAIL_RE.test(email)) { fail(emailEl, T('js.errEmail', '올바른 이메일 주소를 입력해주세요.')); invalid.push(emailEl); }
+      if (!desc) { fail(descEl, T('js.errDesc', '문의 내용을 입력해주세요.')); invalid.push(descEl); }
 
       if (invalid.length) {
         invalid[0].focus();
@@ -337,12 +350,12 @@
       form.setAttribute('aria-busy', 'true');
       if (note) {
         note.classList.remove('form-note-error');
-        note.textContent = '문의를 전송하고 있습니다…';
+        note.textContent = T('js.sending', '문의를 전송하고 있습니다…');
       }
 
       if (btn) {
         btn.disabled = true;
-        btn.textContent = '전송 중…';
+        btn.textContent = T('js.sendingBtn', '전송 중…');
       }
 
       fetch('https://formsubmit.co/ajax/' + EMAIL, {
@@ -383,8 +396,8 @@
           if (note) {
             note.classList.add('form-note-error');
             note.textContent = error.name === 'AbortError'
-              ? '응답이 지연되고 있습니다. 입력 내용은 보존되어 있으니 다시 시도하시거나 kyh@octo-brain.com 으로 직접 보내주세요.'
-              : '전송에 실패했습니다. 입력 내용은 보존되어 있으니 다시 시도하시거나 kyh@octo-brain.com 으로 직접 보내주세요.';
+              ? T('js.sendTimeout', '응답이 지연되고 있습니다. 입력 내용은 보존되어 있으니 다시 시도하시거나 kyh@octo-brain.com 으로 직접 보내주세요.')
+              : T('js.sendFail', '전송에 실패했습니다. 입력 내용은 보존되어 있으니 다시 시도하시거나 kyh@octo-brain.com 으로 직접 보내주세요.');
           }
         })
         .finally(function () {

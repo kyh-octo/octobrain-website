@@ -17,47 +17,47 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+KR:wght@400;500;700&amp;family=Press+Start+2P&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;family=Press+Start+2P&amp;display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20260925-i18n">
 <link rel="stylesheet" href="assets/css/divisions.css">
 <link rel="stylesheet" href="assets/css/games.css">
 </head>
 <body class="games-page" data-page="games">
-<a class="skip-link" href="#games-main">본문으로 건너뛰기</a>
+<a class="skip-link" href="#games-main" data-i18n="common.skip">본문으로 건너뛰기</a>
 <header class="site-header division-header" id="siteHeader">
   <div class="container header-inner">
     <div class="division-brand">
-      <a class="brand" href="#top" aria-label="옥토브레인 인디게임 홈"><img class="brand-mark" src="assets/img/logo-mark.svg" alt="" width="23" height="28"><img class="brand-name" src="assets/img/logo-name.svg" alt="" aria-hidden="true"></a>
-      <span class="division-label">인디게임</span>
+      <a class="brand" href="#top" aria-label="옥토브레인 인디게임 홈" data-i18n-attr="aria-label:games.brand"><img class="brand-mark" src="assets/img/logo-mark.svg" alt="" width="23" height="28"><img class="brand-name" src="assets/img/logo-name.svg" alt="" aria-hidden="true"></a>
+      <span class="division-label" data-i18n="games.label">인디게임</span>
     </div>
-    <nav class="nav-desk" aria-label="인디게임 메뉴">
-      <a class="nav-link" href="#game-project">개발 중인 게임</a>
-      <a class="nav-link" href="#updates">개발 소식</a>
+    <nav class="nav-desk" aria-label="인디게임 메뉴" data-i18n-attr="aria-label:games.navLabel">
+      <a class="nav-link" href="#game-project" data-i18n="games.nav.project">개발 중인 게임</a>
+      <a class="nav-link" href="#updates" data-i18n="games.nav.updates">개발 소식</a>
     </nav>
-    <a class="business-switch" href="index.html">사업 선택 <span aria-hidden="true">↗</span></a>
-    <a class="btn-nav" href="#contact">게임 문의</a>
-    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-haspopup="dialog" aria-label="메뉴 열기"><span class="nav-toggle-box" aria-hidden="true"><span></span><span></span><span></span></span></button>
+    <a class="business-switch" href="index.html" data-i18n="common.businessSwitch">사업 선택 <span aria-hidden="true">↗</span></a>
+    <a class="btn-nav" href="#contact" data-i18n="games.nav.contact">게임 문의</a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-haspopup="dialog" aria-label="메뉴 열기" data-i18n-attr="aria-label:common.menuOpen"><span class="nav-toggle-box" aria-hidden="true"><span></span><span></span><span></span></span></button>
   </div>
 </header>
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="인디게임 모바일 메뉴" hidden inert>
-  <button class="menu-close" id="menuClose" type="button" aria-label="메뉴 닫기"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-  <nav class="mobile-nav" aria-label="인디게임 모바일 주요 메뉴">
-      <a class="nav-link" href="#game-project">개발 중인 게임</a>
-      <a class="nav-link" href="#updates">개발 소식</a>
-    <a class="btn-nav btn-nav-lg" href="#contact">게임 문의</a>
-    <a class="mobile-business-switch" href="index.html">← 다른 사업 보기</a>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="인디게임 모바일 메뉴" data-i18n-attr="aria-label:games.mobileLabel" hidden inert>
+  <button class="menu-close" id="menuClose" type="button" aria-label="메뉴 닫기" data-i18n-attr="aria-label:common.menuClose"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <nav class="mobile-nav" aria-label="인디게임 모바일 주요 메뉴" data-i18n-attr="aria-label:games.mobileNavLabel">
+      <a class="nav-link" href="#game-project" data-i18n="games.nav.project">개발 중인 게임</a>
+      <a class="nav-link" href="#updates" data-i18n="games.nav.updates">개발 소식</a>
+    <a class="btn-nav btn-nav-lg" href="#contact" data-i18n="games.nav.contact">게임 문의</a>
+    <a class="mobile-business-switch" href="index.html" data-i18n="common.mobileSwitch">← 다른 사업 보기</a>
   </nav>
 </div>
-<noscript><nav class="no-script-nav" aria-label="인디게임 페이지 메뉴"><a href="#game-project">개발 중인 게임</a><a href="#updates">개발 소식</a><a href="#contact">게임 문의</a></nav></noscript>
+<noscript><nav class="no-script-nav" aria-label="인디게임 페이지 메뉴"><a href="#game-project" data-i18n="games.nav.project">개발 중인 게임</a><a href="#updates" data-i18n="games.nav.updates">개발 소식</a><a href="#contact" data-i18n="games.nav.contact">게임 문의</a></nav></noscript>
 <main id="games-main" tabindex="-1">
   <section class="games-hero" id="top" aria-labelledby="games-title" tabindex="-1">
     <div class="container">
-      <a class="page-back" href="index.html">← 사업 선택</a>
+      <a class="page-back" href="index.html" data-i18n="common.back">← 사업 선택</a>
       <p class="eyebrow eyebrow-pixel">OCTOBRAIN GAMES</p>
-      <h1 id="games-title">작은 스튜디오의,<br><span>새로운 플레이.</span></h1>
-      <p class="games-intro">옥토브레인이 직접 기획하고 만드는 인디 게임.<br>새로운 이야기가 시작되는 과정을 함께 지켜봐 주세요.</p>
-      <a class="btn btn-game" href="#game-project">개발 중인 게임 보기 <span aria-hidden="true">↓</span></a>
+      <h1 id="games-title" data-i18n="games.title">작은 스튜디오의,<br><span>새로운 플레이.</span></h1>
+      <p class="games-intro" data-i18n="games.intro">옥토브레인이 직접 기획하고 만드는 인디 게임.<br>새로운 이야기가 시작되는 과정을 함께 지켜봐 주세요.</p>
+      <a class="btn btn-game" href="#game-project" data-i18n="games.cta">개발 중인 게임 보기 <span aria-hidden="true">↓</span></a>
       <span class="games-hero-decor" aria-hidden="true">PLAY<br>CREATE<br>REPEAT<span>+</span></span>
     </div>
   </section>
@@ -73,43 +73,44 @@
           <span class="pxc pxc-br" aria-hidden="true"></span>
           <div class="game-media-inner">
             <img src="assets/img/logo-mark.svg" alt="" aria-hidden="true" width="52" height="64">
-            <p class="game-media-text">스크린샷 · 트레일러<br>공개 준비 중</p>
+            <p class="game-media-text" data-i18n="games.mediaText">스크린샷 · 트레일러<br>공개 준비 중</p>
           </div>
         </div>
         <div class="game-body">
-          <span class="game-status">개발 중 · 타이틀 공개 예정</span>
-          <h2 class="game-title" id="game-project-title">신작 프로젝트 <span class="game-title-sub">— 타이틀 공개 예정</span></h2>
-          <p class="game-desc">Unity 기반으로 개발 중인 첫 자체 타이틀입니다. 게임 소개와 스크린샷, 트레일러가 준비되는 대로 이 자리에 공개됩니다.</p>
+          <span class="game-status" data-i18n="games.status">개발 중 · 타이틀 공개 예정</span>
+          <h2 class="game-title" id="game-project-title" data-i18n="games.projectTitle">신작 프로젝트 <span class="game-title-sub">— 타이틀 공개 예정</span></h2>
+          <p class="game-desc" data-i18n="games.desc">Unity 기반으로 개발 중인 첫 자체 타이틀입니다. 게임 소개와 스크린샷, 트레일러가 준비되는 대로 이 자리에 공개됩니다.</p>
           <ul class="chips">
             <li class="chip chip-y">Unity</li>
             <li class="chip chip-y">PC</li>
-            <li class="chip chip-y">Steam 출시 예정</li>
+            <li class="chip chip-y" data-i18n="games.chip3">Steam 출시 예정</li>
           </ul>
           <div class="game-actions">
-            <p class="game-release-note">Steam 스토어는 공개 준비 중입니다.</p>
-            <a class="btn btn-secondary" href="mailto:kyh@octo-brain.com?subject=%5BGames%5D%20%EA%B2%8C%EC%9E%84%20%EB%AC%B8%EC%9D%98">이메일로 게임 문의</a>
-            <a class="btn btn-game" href="https://www.youtube.com/@OctoBrain-softworks" target="_blank" rel="noopener">YouTube에서 개발 소식 보기 ↗</a>
+            <p class="game-release-note" data-i18n="games.releaseNote">Steam 스토어는 공개 준비 중입니다.</p>
+            <a class="btn btn-secondary" href="mailto:kyh@octo-brain.com?subject=%5BGames%5D%20%EA%B2%8C%EC%9E%84%20%EB%AC%B8%EC%9D%98" data-i18n="games.emailBtn">이메일로 게임 문의</a>
+            <a class="btn btn-game" href="https://www.youtube.com/@OctoBrain-softworks" target="_blank" rel="noopener" data-i18n="games.youtubeBtn">YouTube에서 개발 소식 보기 ↗</a>
           </div>
         </div>
       </article>
 
-      <aside class="games-updates" id="updates" tabindex="-1" aria-labelledby="updates-title"><h2 id="updates-title">다음 소식은 이곳에서</h2><p>게임 이름, 플레이 화면, 출시 일정이 정해지면 이 페이지에 안내합니다.</p><a href="https://www.youtube.com/@OctoBrain-softworks" target="_blank" rel="noopener">옥토브레인 YouTube 채널 <span aria-hidden="true">↗</span></a></aside>
+      <aside class="games-updates" id="updates" tabindex="-1" aria-labelledby="updates-title"><h2 id="updates-title" data-i18n="games.updates.title">다음 소식은 이곳에서</h2><p data-i18n="games.updates.body">게임 이름, 플레이 화면, 출시 일정이 정해지면 이 페이지에 안내합니다.</p><a href="https://www.youtube.com/@OctoBrain-softworks" target="_blank" rel="noopener" data-i18n="games.updates.link">옥토브레인 YouTube 채널 <span aria-hidden="true">↗</span></a></aside>
     </div>
   </section>
   <section class="division-contact" id="contact" tabindex="-1" aria-labelledby="games-contact-title">
-    <div class="container"><div><p class="eyebrow">// CONTACT</p><h2 id="games-contact-title">게임 관련 문의</h2><p>게임 소개, 제휴 및 개발 소식에 대해 궁금한 점을 보내주세요.</p></div><a class="btn btn-game" href="mailto:kyh@octo-brain.com?subject=%5BGames%5D%20%EA%B2%8C%EC%9E%84%20%EB%AC%B8%EC%9D%98">이메일로 게임 문의 <span aria-hidden="true">↗</span></a></div>
+    <div class="container"><div><p class="eyebrow">// CONTACT</p><h2 id="games-contact-title" data-i18n="games.contact.title">게임 관련 문의</h2><p data-i18n="games.contact.body">게임 소개, 제휴 및 개발 소식에 대해 궁금한 점을 보내주세요.</p></div><a class="btn btn-game" href="mailto:kyh@octo-brain.com?subject=%5BGames%5D%20%EA%B2%8C%EC%9E%84%20%EB%AC%B8%EC%9D%98" data-i18n="games.contact.cta">이메일로 게임 문의 <span aria-hidden="true">↗</span></a></div>
   </section>
 </main>
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-col"><p class="footer-division">OctoBrain <span>인디게임</span></p><p class="footer-about">옥토브레인이 직접 기획하고 개발하는 인디 게임과 새로운 개발 소식을 소개합니다.</p><a class="footer-switch" href="index.html">← 옥토브레인 사업 선택</a></div>
-      <nav class="footer-col" aria-label="푸터 메뉴"><p class="footer-head">인디게임 메뉴</p><ul class="footer-links"><li><a href="#game-project">개발 중인 게임</a></li><li><a href="#updates">개발 소식</a></li><li><a href="#contact">게임 문의</a></li></ul></nav>
+      <div class="footer-col"><p class="footer-division" data-i18n="games.footer.division">OctoBrain <span>인디게임</span></p><p class="footer-about" data-i18n="games.footer.about">옥토브레인이 직접 기획하고 개발하는 인디 게임과 새로운 개발 소식을 소개합니다.</p><a class="footer-switch" href="index.html" data-i18n="common.footerSwitch">← 옥토브레인 사업 선택</a></div>
+      <nav class="footer-col" aria-label="푸터 메뉴" data-i18n-attr="aria-label:common.footerNav"><p class="footer-head" data-i18n="games.footer.menu">인디게임 메뉴</p><ul class="footer-links"><li><a href="#game-project" data-i18n="games.nav.project">개발 중인 게임</a></li><li><a href="#updates" data-i18n="games.nav.updates">개발 소식</a></li><li><a href="#contact" data-i18n="games.nav.contact">게임 문의</a></li></ul></nav>
       <div class="footer-col"><p class="footer-head">CONTACT</p><ul class="footer-links"><li><a class="footer-mail" href="mailto:kyh@octo-brain.com">kyh@octo-brain.com</a></li><li>octo-brain.com</li></ul></div>
     </div>
-    <div class="footer-bottom"><a class="back-top" href="#top">맨 위로 ↑</a><p>© <span id="year">2026</span> OctoBrain. All rights reserved.</p><p>상호 옥토브레인 · 대표 김윤환 · 사업자등록번호 438-10-03079</p></div>
+    <div class="footer-bottom"><a class="back-top" href="#top" data-i18n="common.backTop">맨 위로 ↑</a><p>© <span id="year">2026</span> OctoBrain. All rights reserved.</p><p data-i18n="common.legal">상호 옥토브레인 · 대표 김윤환 · 사업자등록번호 438-10-03079</p></div>
   </div>
 </footer>
-<script src="assets/js/main.js?v=20260915-business"></script>
+<script src="assets/js/i18n.js?v=20260925-i18n"></script>
+<script src="assets/js/main.js?v=20260925-i18n"></script>
 </body>
 </html>
