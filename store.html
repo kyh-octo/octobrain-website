@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="assets/css/style.css?v=20260925-i18n">
 <link rel="stylesheet" href="assets/css/divisions.css">
-<link rel="stylesheet" href="assets/css/store.css">
+<link rel="stylesheet" href="assets/css/store.css?v=20261005-modbus">
 </head>
 <body class="store-page" data-page="store">
 <a class="skip-link" href="#store-main" data-i18n="common.skip">본문으로 건너뛰기</a>
@@ -60,7 +60,7 @@
         <p class="eyebrow" data-i18n="store.eyebrow">OCTOBRAIN SOFTWARE · 판매 및 배포</p>
         <h1 id="store-title" data-i18n="store.title">필요한 프로그램을,<br><span>한곳에서.</span></h1>
         <p class="store-intro" data-i18n="store.intro">무료 Windows 프로그램을 내려받고, <br>새로운 프로그램과 라이선스 판매 소식을 확인하세요.</p>
-        <div class="division-actions"><a class="btn btn-primary" href="#downloads" data-i18n="store.ctaDownload">무료 프로그램 다운로드 <span class="arr" aria-hidden="true">↓</span></a><a class="btn btn-secondary" href="#programs" data-i18n="store.ctaLicense">라이선스 판매 안내</a></div><p class="software-status" data-i18n="store.status">무료 유틸리티 3종 배포 중 · 라이선스 판매 준비 중</p>
+        <div class="division-actions"><a class="btn btn-primary" href="#downloads" data-i18n="store.ctaDownload">무료 프로그램 다운로드 <span class="arr" aria-hidden="true">↓</span></a><a class="btn btn-secondary" href="#programs" data-i18n="store.ctaLicense">라이선스 판매 안내</a></div><p class="software-status" data-i18n="store.status">무료 프로그램 3종 배포 중 · Octo Modbus 1.0.0 다운로드 및 Pro 판매</p>
       </div>
       <div class="store-art" aria-hidden="true">
         <div class="store-orbit"></div>
@@ -148,12 +148,9 @@
 
   <section class="store-catalog" id="programs" aria-labelledby="programs-title" tabindex="-1">
     <div class="container">
-      <div class="store-section-head"><div><p class="eyebrow">// LICENSE STORE</p><h2 id="programs-title" data-i18n="store.nav.programs">라이선스 판매</h2></div><span class="store-status" data-i18n="store.programs.status">판매 준비 중</span></div>
-      <!-- Octo Modbus prelaunch listing. Checkout remains disabled until release gates pass. -->
-      <div class="store-empty">
-        <div class="empty-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="9" width="34" height="30" rx="4"/><path d="M7 17h34M13 13h1m4 0h1M19 24l-4 4 4 4m10-8 4 4-4 4"/></svg></div>
-        <div><p class="empty-kicker">COMING SOON</p><h3>Octo Modbus</h3><p data-i18n="store.modbus.desc">Windows용 Modbus Master·Server와 시뮬레이터. Free와 Pro 출시를 준비하고 있습니다.</p><p><a class="btn btn-secondary" href="octo-modbus.html" data-i18n="store.modbus.link" data-i18n-attr="href:store.modbus.url">제품 살펴보기 →</a></p></div>
-      </div>
+      <div class="store-section-head"><div><p class="eyebrow">// LICENSE STORE</p><h2 id="programs-title" data-i18n="store.nav.programs">라이선스 판매</h2></div><span class="store-status" data-i18n="store.programs.status">Octo Modbus 1.0.0 판매 중</span></div>
+      <!-- Octo Modbus 1.0.0 download and Pro checkout. -->
+      <div class="store-modbus-card"><div><p class="empty-kicker">WINDOWS · VERSION 1.0.0</p><h3>Octo Modbus</h3><p data-i18n="store.modbus.desc">공통 설치 파일은 Free로 제공되며, Pro 키로 추가 기능을 해금합니다.</p><p class="store-modbus-links"><a class="btn btn-primary" href="https://github.com/kyh-octo/octobrain-website/releases/download/octomodbus-v1.0.0/OctoModbus-Setup-1.0.0.exe" data-i18n="store.modbus.download">Free 다운로드 (.exe)</a> <a class="btn btn-secondary" href="octo-modbus.html" data-i18n="store.modbus.link" data-i18n-attr="href:store.modbus.url">제품 기능과 Pro 구매 →</a></p><p class="store-modbus-prices" data-i18n="store.modbus.prices">Pro 영구 라이선스 · 세금 별도: 1 PC $25 · 3 PC $65 · 5 PC $99 · 10 PC $179</p></div></div>
     </div>
   </section>
 
@@ -162,9 +159,9 @@
       <div class="store-section-head"><div><p class="eyebrow">// LICENSES</p><h2 id="licenses-title" data-i18n="store.nav.licenses">라이선스 안내</h2></div></div>
       <div class="license-grid">
         <article class="license-card"><p class="license-label">FREE LICENSE</p><h3 data-i18n="store.lic.freeTitle">무료 라이선스</h3><p data-i18n="store.lic.freeBody">위 무료 유틸리티 3종은 MIT 라이선스로 배포합니다. 향후 추가 프로그램의 무료 라이선스는 제품별 사용 조건을 안내할 예정입니다.</p><span class="license-note" data-i18n="store.lic.freeNote">무료 유틸리티 다운로드 가능</span></article>
-        <article class="license-card"><p class="license-label">PAID LICENSE</p><h3 data-i18n="store.lic.paidTitle">유료 라이선스</h3><p data-i18n="store.lic.paidBody">구매 가능한 라이선스의 가격과 포함 기능, 사용 기간을 프로그램별로 안내할 예정입니다.</p><span class="license-note" data-i18n="store.lic.paidNote">가격 · 구매 방법 공개 예정</span></article>
+        <article class="license-card"><p class="license-label">PAID LICENSE</p><h3 data-i18n="store.lic.paidTitle">유료 라이선스</h3><p data-i18n="store.lic.paidBody">Octo Modbus Pro는 영구 구매이며 버전 1.x 업데이트를 무료로 제공합니다. 각 라이선스 키는 PC 한 대에서 사용합니다.</p><span class="license-note" data-i18n="store.lic.paidNote">Octo Modbus Pro 구매 가능</span></article>
       </div>
-      <p class="license-disclaimer" data-i18n="store.lic.disclaimer">라이선스 제공 여부와 세부 조건은 제품 출시 시 확정됩니다. 무료 유틸리티는 위에서 다운로드할 수 있으며, 별도 라이선스 발급·결제 기능은 준비 중입니다.</p>
+      <p class="license-disclaimer" data-i18n="store.lic.disclaimer">Octo Modbus 공통 설치 파일은 Free로 제공됩니다. Pro 키는 구매한 기능을 해금하며 PC 이전 시 기존 PC에서 비활성화해야 합니다.</p>
       <aside class="store-help" id="support" tabindex="-1" aria-label="프로그램 문의" data-i18n-attr="aria-label:store.supportLabel"><div><h3 data-i18n="store.support.title">프로그램에 대해 궁금한 점이 있나요?</h3><p data-i18n="store.support.body">제품 및 라이선스 관련 문의를 이메일로 보내주세요.</p></div><a href="mailto:kyh@octo-brain.com?subject=%5BStore%5D%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20%EB%AC%B8%EC%9D%98">kyh@octo-brain.com <span aria-hidden="true">↗</span></a></aside>
     </div>
   </section>
@@ -179,7 +176,7 @@
     <div class="footer-bottom"><a class="back-top" href="#top" data-i18n="common.backTop">맨 위로 ↑</a><p>© <span id="year">2026</span> OctoBrain. All rights reserved.</p><p data-i18n="common.legal">상호 옥토브레인 · 대표 김윤환 · 사업자등록번호 438-10-03079</p></div>
   </div>
 </footer>
-<script src="assets/js/i18n.js?v=20260927-modbus"></script>
+<script src="assets/js/i18n.js?v=20261005-modbus"></script>
 <script src="assets/js/main.js?v=20260925-i18n"></script>
 </body>
 </html>

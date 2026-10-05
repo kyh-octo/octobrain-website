@@ -2,28 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.octo-brain.com/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.octo-brain.com/store.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.octo-brain.com/games.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.octo-brain.com/engineering.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url><loc>https://www.octo-brain.com/octo-modbus.html</loc><lastmod>2026-09-27</lastmod></url>
-  <url><loc>https://www.octo-brain.com/octo-modbus.en.html</loc><lastmod>2026-09-27</lastmod></url>
-</urlset>
+  <url><loc>https://www.octo-brain.com/octo-modbus.html</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://www.octo-brain.com/octo-modbus.en.html</loc><lastmod>2026-10-05</lastmod></url>
+<url><loc>https://www.octo-brain.com/modbus-refund.html</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://www.octo-brain.com/modbus-refund.en.html</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://www.octo-brain.com/modbus-privacy.html</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://www.octo-brain.com/modbus-privacy.en.html</loc><lastmod>2026-10-05</lastmod></url>
+  </urlset>
