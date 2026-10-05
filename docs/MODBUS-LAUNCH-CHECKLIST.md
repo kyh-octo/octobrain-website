@@ -1,6 +1,6 @@
 # Octo Modbus launch checklist
 
-This checklist records the launch blockers for the local-only Korean and English product-page draft. The pages intentionally provide no purchase or download action.
+Historical preparation checklist (2026-09-27). Octo Modbus launched on 2026-10-05 with signed downloads and live Pro checkout. See [current public verification](QA-WEBSITE-2026-10-05.md); the unchecked items below are the original preparation record, not current release status. Clean-VM and physical-device validation remain separate from the current-PC checks.
 
 ## Required before sales or public launch
 

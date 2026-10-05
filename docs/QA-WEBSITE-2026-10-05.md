@@ -34,3 +34,9 @@ The four pre-existing untracked policy files (`modbus-refund.html`, `modbus-refu
 - Completed translations for the newly added store download button and prices, added product-card styling, and corrected an extra closing div. Existing utility versions remain unchanged.
 - GitHub download release published 2026-10-05; six product artifacts plus SHA256SUMS. Separate remote byte/hash verification is recorded by the application release QA.
 - Final live-site and Lemon Squeezy publication verification will be appended after deployment.
+
+## Public verification complete
+
+GitHub Pages deployment `8bf8c2e` succeeded. Both product pages, four policy pages, store, sitemap and robots.txt returned HTTP 200. Lemon Squeezy live product 1399853 is Published with four correctly selected packs at USD25/65/99/179; each variant includes the signed 70,511,688-byte installer. No real payment was submitted. All six public release downloads and the checksum file matched their source artifacts. Google Search Console accepted the refreshed sitemap and indexing requests for both product languages; search indexing and ranking remain pending Google processing.
+
+Final deep-link review found that the pricing heading could sit beneath the fixed header. Pricing and policy section anchors now reserve 100px header clearance; the English pricing section has the same anchor. Static-page content and existing utility releases are preserved.
