@@ -31,4 +31,7 @@ These checks do not establish warning-free SmartScreen reputation, clean-VM beha
 
 ## Deployment
 
-Public website verification is recorded after the Pages deployment completes.
+- Website content commit b90fbe247a8e024afecef71ac616d685db78ec6f was pushed to origin/main. GitHub Pages run 37346387994 completed successfully.
+- Live store, translated JavaScript and sitemap returned HTTP 200. Store contains the three new release URLs and cache version 20261006-signed; sitemap store lastmod is 2026-10-06.
+- Company Chrome verified the actual public page at https://www.octo-brain.com/store.html#downloads: versions 1.3.1/1.6.1/1.2.1, correct sizes and expanded signed-publisher guidance. Desktop document/content widths are both 1905px. Existing Octo Modbus 1.0.0 and prices remain visible.
+- Public screenshot is saved outside the repository at %LOCALAPPDATA%\OctoBrain Softworks\SigningEvidence\20261006\free-software-signed-homepage.png. Local preview server is stopped after verification.
