@@ -18,6 +18,10 @@
 
   var DICT = {
   "en": {
+    "store.modbus.desc": "A Windows Modbus Master, Server and simulator. Free and Pro editions are coming soon.",
+    "store.modbus.link": "Explore Octo Modbus →",
+    "store.modbus.url": "octo-modbus.en.html",
+
     "common.skip": "Skip to content",
     "common.legal": "OctoBrain · CEO Yunhwan Kim · Business Registration No. 438-10-03079",
     "common.businessSwitch": "Divisions <span aria-hidden=\"true\">↗</span>",
@@ -250,6 +254,10 @@
     "store.dlMeta": "Windows 10/11 · 64-bit · {size}"
   },
   "ja": {
+    "store.modbus.desc": "Windows用Modbus Master・Server・シミュレーター。Free / Pro版のリリースを準備しています。",
+    "store.modbus.link": "製品を見る（英語） →",
+    "store.modbus.url": "octo-modbus.en.html",
+
     "common.skip": "本文へスキップ",
     "common.legal": "屋号 オクトブレイン · 代表 キム・ユンファン · 事業者登録番号 438-10-03079",
     "common.businessSwitch": "事業選択 <span aria-hidden=\"true\">↗</span>",
