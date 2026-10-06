@@ -496,18 +496,28 @@
 };
 
   var META = {
+  "ko": {
+    "home": {
+      "title": "외주개발 · 프로그램 판매 · 인디게임 | 옥토브레인 OctoBrain",
+      "description": "옥토브레인(OctoBrain)은 임베디드·산업용 소프트웨어 외주개발, 자체 프로그램 판매와 무료 배포, 인디게임 제작을 합니다."
+    },
+    "store": {
+      "title": "Octo Modbus Pro 유료 라이선스 · 무료 프로그램 | 옥토브레인",
+      "description": "Octo Modbus Pro 유료 라이선스를 판매하며, OctoPlayer·OctoCapture·OctoConverter를 무료로 다운로드할 수 있습니다."
+    }
+  },
   "en": {
     "home": {
       "title": "Contract Development · Software · Indie Games | OctoBrain",
-      "description": "OctoBrain's three divisions: contract engineering services, software sales and free downloads, and self-developed indie games, each on its own page."
+      "description": "OctoBrain provides contract software development, sells its own software, distributes free utilities, and develops indie games."
     },
     "engineering": {
       "title": "Contract Development | OctoBrain",
       "description": "Contract development for embedded, BMS and industrial software. From requirements review through design, development, verification and delivery."
     },
     "store": {
-      "title": "Software | OctoBrain",
-      "description": "Free downloads of OctoBrain software, plus license sales and usage information."
+      "title": "Octo Modbus Pro License · Free Software | OctoBrain",
+      "description": "Purchase an Octo Modbus Pro paid license and download OctoPlayer, OctoCapture, and OctoConverter for free."
     },
     "games": {
       "title": "Indie Games | OctoBrain",
@@ -520,16 +530,16 @@
   },
   "ja": {
     "home": {
-      "title": "受託開発 · ソフトウェア · インディーゲーム | OctoBrain（オクトブレイン）",
-      "description": "オクトブレインの3つの事業。受託開発サービス、ソフトウェアの販売・無料配布、自社制作のインディーゲームを、それぞれの専用ページでご覧ください。"
+      "title": "受託開発 · ソフトウェア販売 · インディーゲーム | OctoBrain（オクトブレイン）",
+      "description": "OctoBrain（オクトブレイン）は、ソフトウェアの受託開発、自社ソフトウェアの販売と無料配布、インディーゲームの制作を行っています。"
     },
     "engineering": {
       "title": "受託開発 | OctoBrain（オクトブレイン）",
       "description": "組み込み・BMS・産業用ソフトウェアの受託開発。要件の検討から設計、開発、検証、納品まで一貫して対応します。"
     },
     "store": {
-      "title": "ソフトウェア販売・配布 | OctoBrain（オクトブレイン）",
-      "description": "オクトブレインのソフトウェアの無料ダウンロードと、ライセンス販売・利用のご案内。"
+      "title": "Octo Modbus Pro 有料ライセンス · 無料ソフトウェア | OctoBrain",
+      "description": "Octo Modbus Proの有料ライセンスを販売しています。OctoPlayer、OctoCapture、OctoConverterは無料でダウンロードできます。"
     },
     "games": {
       "title": "インディーゲーム | OctoBrain（オクトブレイン）",
@@ -636,7 +646,7 @@
     }
 
     var page = document.body.getAttribute('data-page') || '';
-    var meta = lang !== 'ko' && META[lang] ? META[lang][page] : null;
+    var meta = META[lang] ? META[lang][page] : null;
     if (meta) setMeta(meta.title, meta.description || origMeta.description);
     else setMeta(origMeta.title, origMeta.description);
 
