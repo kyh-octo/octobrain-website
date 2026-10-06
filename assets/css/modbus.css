@@ -39,6 +39,12 @@
 .modbus-page .mb-section-head{max-width:700px;margin-bottom:36px}
 .modbus-page .mb-section h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.035em;margin:12px 0}
 .modbus-page .mb-section-head>p:last-child{line-height:1.85}
+.modbus-page #demo{scroll-margin-top:88px}
+.modbus-page .mb-video{max-width:960px;margin:0 auto;min-width:0}
+.modbus-page .mb-video-frame{position:relative;width:100%;max-width:100%;aspect-ratio:16/9;min-height:202px;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#05080f}
+.modbus-page .mb-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.modbus-page .mb-video-caption{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 20px;margin-top:16px;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+.modbus-page .mb-video-caption a{display:inline-flex;align-items:center;min-height:44px;color:var(--mb-accent);text-decoration:underline;text-underline-offset:4px}
 .modbus-page .mb-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .modbus-page .mb-card{min-width:0;padding:25px 24px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(150deg,#101d2b,#0a101b 80%)}
 .modbus-page .mb-card-icon{width:42px;height:42px;display:grid;place-items:center;margin-bottom:22px;border:1px solid rgba(53,221,208,.3);border-radius:12px;color:var(--mb-accent);font:18px var(--font-mono)}

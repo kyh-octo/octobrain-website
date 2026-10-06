@@ -123,7 +123,7 @@
   (function scrollSpy() {
     var pageSections = {
       engineering: ['services', 'projects', 'partnership', 'about', 'contact'],
-      store: ['downloads', 'programs', 'licenses', 'support'],
+      store: ['programs', 'downloads', 'licenses', 'support'],
       games: ['game-project', 'updates', 'contact']
     };
     var ids = pageSections[document.body.dataset.page] || [];
