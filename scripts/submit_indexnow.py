@@ -85,7 +85,7 @@ def changed_urls(sitemap_urls):
         status, paths = fields[0], fields[1:]
         path = paths[-1] if status.startswith(("R", "C")) else paths[0]
         normalized = path.replace("\\", "/")
-        if normalized in {"sitemap.xml", "indexnow.json"} or re.fullmatch(r"[0-9a-f]{32}\.txt", Path(normalized).name):
+        if normalized in {"sitemap.xml", "indexnow.json", "scripts/submit_indexnow.py", ".github/workflows/indexnow.yml"} or re.fullmatch(r"[0-9a-f]{32}\.txt", Path(normalized).name):
             all_pages = True
             continue
         if normalized == "assets/js/i18n.js" or (normalized.startswith("assets/css/") and normalized.endswith(".css")):
