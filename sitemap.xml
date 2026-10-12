@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://www.octo-brain.com/store.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -40,4 +40,7 @@
   <url><loc>https://www.octo-brain.com/modbus-refund.en.html</loc><lastmod>2026-10-05</lastmod></url>
   <url><loc>https://www.octo-brain.com/modbus-privacy.html</loc><lastmod>2026-10-05</lastmod></url>
   <url><loc>https://www.octo-brain.com/modbus-privacy.en.html</loc><lastmod>2026-10-05</lastmod></url>
-  </urlset>
+  <url><loc>https://www.octo-brain.com/octo-player.html</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://www.octo-brain.com/octo-capture.html</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://www.octo-brain.com/octo-converter.html</loc><lastmod>2026-10-13</lastmod></url>
+</urlset>

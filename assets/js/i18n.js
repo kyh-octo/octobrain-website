@@ -86,6 +86,7 @@
     "store.converter.chip3": "Batch conversion",
     "store.download": "Download (.exe) <span class=\"arr\" aria-hidden=\"true\">↓</span>",
     "store.notes": "Release notes ↗",
+    "store.details": "Explore product features (Korean) →",
     "store.help.summary": "Installation &amp; requirements",
     "store.help.body": "The three utilities above are free, with their own source code distributed under the MIT license. Bundled third-party components retain their respective licenses; notices are included in the installation folder. The installers are self-contained, so no .NET runtime installation is required. The installers are signed with Microsoft Artifact Signing; the verified publisher name is 옥토브레인 (OctoBrain). Windows SmartScreen behavior may vary depending on file reputation and PC security policies.",
     "store.programs.status": "Octo Modbus 1.0.0 · Pro licenses available",
@@ -324,6 +325,7 @@
     "store.converter.chip3": "一括変換",
     "store.download": "ダウンロード (.exe) <span class=\"arr\" aria-hidden=\"true\">↓</span>",
     "store.notes": "リリースノート ↗",
+    "store.details": "製品機能の詳細（韓国語）→",
     "store.help.summary": "インストール案内 · 動作環境",
     "store.help.body": "上記の3つのユーティリティは無料で、独自のソースコードはMITライセンスで配布しています。同梱する外部コンポーネントにはそれぞれのライセンスが適用され、告知文書はインストールフォルダーに含まれます。.NETランタイムのインストールが不要な自己完結型（self-contained）のインストーラーです。インストーラーはMicrosoft Artifact Signingで署名され、確認済みの発行元名は옥토브레인（OctoBrain）です。Windows SmartScreenの表示は、ファイルの評価やPCのセキュリティポリシーによって異なる場合があります。",
     "store.programs.status": "Octo Modbus 1.0.0 · Proライセンス販売中",
@@ -502,8 +504,8 @@
       "description": "옥토브레인(OctoBrain)은 임베디드·산업용 소프트웨어 외주개발, 자체 프로그램 판매와 무료 배포, 인디게임 제작을 합니다."
     },
     "store": {
-      "title": "Octo Modbus Pro 유료 라이선스 · 무료 프로그램 | 옥토브레인",
-      "description": "Octo Modbus Pro 유료 라이선스를 판매하며, OctoPlayer·OctoCapture·OctoConverter를 무료로 다운로드할 수 있습니다."
+      "title": "프로그램 판매 · 무료 캡처·변환·동영상 플레이어 | 옥토브레인",
+      "description": "무료 화면 캡처·녹화 OctoCapture, 파일 변환 OctoConverter, 동영상 플레이어 OctoPlayer를 Windows에서 사용하세요. 옥토브레인의 공식 다운로드와 Octo Modbus Pro 라이선스 판매 안내입니다."
     }
   },
   "en": {
@@ -516,8 +518,8 @@
       "description": "Contract development for embedded, BMS and industrial software. From requirements review through design, development, verification and delivery."
     },
     "store": {
-      "title": "Octo Modbus Pro License · Free Software | OctoBrain",
-      "description": "Purchase an Octo Modbus Pro paid license and download OctoPlayer, OctoCapture, and OctoConverter for free."
+      "title": "Free Capture, Converter & Video Player · Software | OctoBrain",
+      "description": "Download free Windows screen capture and recording with OctoCapture, file conversion with OctoConverter, and video playback with OctoPlayer. Also explore Octo Modbus Pro licenses."
     },
     "games": {
       "title": "Indie Games | OctoBrain",
@@ -538,8 +540,8 @@
       "description": "組み込み・BMS・産業用ソフトウェアの受託開発。要件の検討から設計、開発、検証、納品まで一貫して対応します。"
     },
     "store": {
-      "title": "Octo Modbus Pro 有料ライセンス · 無料ソフトウェア | OctoBrain",
-      "description": "Octo Modbus Proの有料ライセンスを販売しています。OctoPlayer、OctoCapture、OctoConverterは無料でダウンロードできます。"
+      "title": "無料キャプチャ・変換・動画プレイヤー · ソフトウェア | OctoBrain",
+      "description": "Windows用の無料画面キャプチャ・録画 OctoCapture、ファイル変換 OctoConverter、動画プレイヤー OctoPlayerの公式ダウンロード。Octo Modbus Proのライセンスも販売しています。"
     },
     "games": {
       "title": "インディーゲーム | OctoBrain（オクトブレイン）",
